@@ -1,3 +1,4 @@
+import 'package:fluter_for_dummies/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,7 +53,13 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push()
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const HomePage();
+                    },
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
