@@ -1,3 +1,5 @@
+import 'package:fluter_for_dummies/description_page.dart';
+import 'package:fluter_for_dummies/main.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,71 +9,233 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Wrap(
-              spacing: 10,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade700,
-                    foregroundColor: Colors.amberAccent.shade400,
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text('Apartments'),
+      drawer: SafeArea(
+        child: Drawer(
+          child: Column(
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade700,
-                    foregroundColor: Colors.amberAccent.shade400,
-                    shape: const StadiumBorder(),
+                child: ListTile(
+                  title: Text(
+                    'Asset-trove Realty Blog',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
                   ),
-                  child: const Text('Houses'),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade700,
-                    foregroundColor: Colors.amberAccent.shade400,
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text('Office Space'),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: const Icon(Icons.settings),
+                title: const Text(
+                  'Settings',
+                  // style: TextStyle(
+                  //   color: Colors.white,
+                  //   fontSize: 20.0,
+                  // ),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade700,
-                    foregroundColor: Colors.amberAccent.shade400,
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text('Mortgages'),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const LoginPage();
+                      },
+                    ),
+                  );
+                },
+                leading: const Icon(Icons.logout),
+                title: const Text(
+                  'Logout',
+                  // style: TextStyle(
+                  //   color: Colors.white,
+                  //   fontSize: 20.0,
+                  // ),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade700,
-                    foregroundColor: Colors.amberAccent.shade400,
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text('Lands'),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Container(
-            color: Colors.green,
-            child: Column(
-              children: [
-                Image.asset('images/splashScreen.png'),
-              ],
+        ),
+      ),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              child: Wrap(
+                spacing: 10,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade700,
+                      foregroundColor: Colors.amberAccent.shade400,
+                      shape: const StadiumBorder(),
+                    ),
+                    child: const Text('Apartments'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade700,
+                      foregroundColor: Colors.amberAccent.shade400,
+                      shape: const StadiumBorder(),
+                    ),
+                    child: const Text('Houses'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade700,
+                      foregroundColor: Colors.amberAccent.shade400,
+                      shape: const StadiumBorder(),
+                    ),
+                    child: const Text('Office Space'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade700,
+                      foregroundColor: Colors.amberAccent.shade400,
+                      shape: const StadiumBorder(),
+                    ),
+                    child: const Text('Mortgages'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue.shade700,
+                      foregroundColor: Colors.amberAccent.shade400,
+                      shape: const StadiumBorder(),
+                    ),
+                    child: const Text('Lands'),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const DescriptionPage();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                  vertical: 5.0,
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
+                      )
+                    ]),
+                child: Column(
+                  children: [
+                    Image.asset('images/taxi-house-1.png'),
+                    const ListTile(
+                      title: Text('Buying Your Dream Home in 2023'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const DescriptionPage();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                  vertical: 5.0,
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
+                      )
+                    ]),
+                child: Column(
+                  children: [
+                    Image.asset('images/taxi-new-house.png'),
+                    const ListTile(
+                      title: Text('Real Estate For Dummies'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const DescriptionPage();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                  vertical: 5.0,
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
+                      )
+                    ]),
+                child: Column(
+                  children: [
+                    Image.asset(
+                        'images/lounge-townhouse-with-a-sign-for-sale.png'),
+                    const ListTile(
+                      title: Text('Top Properties to Purchase'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
