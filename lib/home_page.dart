@@ -119,12 +119,16 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            //! First NewsBox widget
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return const DescriptionPage();
+                      return const DescriptionPage(
+                        blogTitle: 'Buying Your Dream Home in 2023',
+                        postImagePath: 'images/taxi-house-1.png',
+                      );
                     },
                   ),
                 );
@@ -157,12 +161,16 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            //! Second NewsBox widget
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return const DescriptionPage();
+                      return const DescriptionPage(
+                        blogTitle: 'Real Estate For Dummies',
+                        postImagePath: 'images/taxi-new-house.png',
+                      );
                     },
                   ),
                 );
@@ -195,12 +203,17 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            //! Third NewsBox Widget
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return const DescriptionPage();
+                      return const DescriptionPage(
+                        blogTitle: 'Top Properties to Purchase',
+                        postImagePath:
+                            'images/lounge-townhouse-with-a-sign-for-sale.png',
+                      );
                     },
                   ),
                 );
@@ -228,6 +241,48 @@ class HomePage extends StatelessWidget {
                         'images/lounge-townhouse-with-a-sign-for-sale.png'),
                     const ListTile(
                       title: Text('Top Properties to Purchase'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            //! Fourth NewsBox Widget
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const DescriptionPage(
+                        blogTitle: 'Luxury Residence Guide',
+                        postImagePath: 'images/taxi-town-house.png',
+                      );
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 10.0,
+                  vertical: 5.0,
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
+                      )
+                    ]),
+                child: Column(
+                  children: [
+                    Image.asset('images/taxi-town-house.png'),
+                    const ListTile(
+                      title: Text('Luxury Residence Guide'),
                       trailing: Icon(Icons.arrow_forward_ios_rounded),
                     ),
                   ],
